@@ -27,6 +27,12 @@ conn.execute(u"""INSERT INTO t01prefecture(PREF_CD,PREF_NAME)
             VALUES (?, ?)""" , (pref_cd, pref_name,))
 conn.commit()
 
+pref_cd = 104
+pref_name = u"ふぁふ"
+conn.execute(u"""INSERT INTO t01prefecture(PREF_CD,PREF_NAME)
+            VALUES (?, ?)""" , (pref_cd, pref_name,))
+conn.commit()
+
 # ロールバックの試験
 pref_cd = 105
 pref_name = u"back"
