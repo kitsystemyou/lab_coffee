@@ -1,5 +1,6 @@
 from bottle import route, run, template, request, redirect
 import sqlite3
+import os
 
 @route("/")
 def index():
