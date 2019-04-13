@@ -67,4 +67,4 @@ def del_item(item_id):
     conn.close
     return redirect("/list")
 
-run(host="localhost", reloader=True, port=7999)
+run(host="0.0.0.0", , port=int(os.environ.get("PORT",5000)))
