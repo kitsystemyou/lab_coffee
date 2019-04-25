@@ -1,3 +1,4 @@
+#make database
 import sqlite3
 
 #connect database
