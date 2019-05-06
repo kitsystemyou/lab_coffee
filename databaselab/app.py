@@ -53,7 +53,9 @@ def update_item():
 
 @route("drink", method=["GET", "POST"])
 def drink_coffee():
-    if request.method =="POSt"
+    if request.method == "POST":
+        print("post")
+    return redirect("/list")
 
 #example
 #/del/100 -> item_id = 100
