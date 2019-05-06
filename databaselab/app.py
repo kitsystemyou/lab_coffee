@@ -1,10 +1,15 @@
-from bottle import route, run, template, request, redirect
+from bottle import route, run, template, request, redirect, static_file
 import sqlite3
 import os
 
 @route("/")
 def index():
     return "<h1>TestHTML</h1>"
+
+#load css files
+@route("/<filename:path>")
+def static(filename):
+    return static_file(filename, root="./")
 
 #show item list
 @route("/list")
@@ -13,7 +18,7 @@ def view_list():
     c = conn.cursor()
     c.execute("select id,name,money,lucky from members order by id")
     member_list = []
-    member_list.append({"id":"id", "name":"名前","money":"残額","lucky":"当たり分"})
+    member_list.append({"id":"id", "name":"名前","money":"残額","lucky":"未実装"})
     for row in c.fetchall():
         member_list.append({"id":row[0],"name":row[1],"money":row[2],"lucky":row[3]})
     conn.close()
@@ -22,7 +27,7 @@ def view_list():
 
 @route("/add", method=["GET","POST"])
 def add_item():
-    if request.method =="POST":  #if POST
+    if request.method =="POST": 
         member_name = request.POST.getunicode("item_name")  #get item name
         conn = sqlite3.connect("members.db")
         c = conn.cursor()
@@ -51,11 +56,15 @@ def update_item():
     else:
         return template("update_tmpl")
 
-@route("drink", method=["GET", "POST"])
-def drink_coffee():
-    if request.method == "POST":
-        print("post")
-    return redirect("/list")
+@route("/charge/<charger_id:int>", method=["GET", "POST"])
+def drink_calc(charger_id):
+    if request.method =="POST":
+        update_id = request.POST.getunicode("id")
+        conn.commit()
+        conn.close()
+        return redirect("/list")
+    else:
+        return template("drink", id = charger_id)
 
 #example
 #/del/100 -> item_id = 100
@@ -72,12 +81,12 @@ def del_item(item_id):
 # user view
 # not yet
 @route("/member_page")
-def view_list():
+def view_member_list():
     conn = sqlite3.connect('members.db')
     c = conn.cursor()
     c.execute("select id,name,money,lucky from members order by id")
     member_list = []
-    member_list.append({"id":"id", "name":"名前","money":"残額","lucky":"当たり分"})
+    member_list.append({"id":"id", "name":"名前","money":"残額","lucky":"未実装"})
     for row in c.fetchall():
         member_list.append({"id":row[0],"name":row[1],"money":row[2],"lucky":row[3]})
     conn.close()
@@ -85,5 +94,5 @@ def view_list():
     return template("member_page", item_list=member_list)
 
 
-run(host="localhost", reloader=True, port=7999)
+run(host="localhost", reloader=True, port=8000)
 # run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
