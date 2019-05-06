@@ -68,6 +68,7 @@ def del_item(item_id):
     return redirect("/list")
 
 # user view
+# not yet
 @route("/member_page")
 def view_list():
     conn = sqlite3.connect('members.db')
