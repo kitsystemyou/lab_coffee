@@ -4,14 +4,14 @@
 
   </style>
   <link rel="stylesheet" href="/files/h1.css">
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
+  <!-- <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'> -->
 </head>
 
 <h1 align="center" class="cp_h1title">Deposit manager</h1>
 
 <body>
 <!-- <a href="/add" > new </a>  -->
-  <table border="1" align="center">
+  <table border="1" align="center" style="table-layout: fixed" width="60%">
     %for i,m in enumerate(item_list):
       %if i==0:
       <tr>

@@ -2,7 +2,7 @@
 .cp_h1title {
 	position: relative;
 	padding: .3em;
-	text-align: center;
+    text-align: center;
 	color:rgb(255, 135, 65);
 }
 .cp_h1title::before,
