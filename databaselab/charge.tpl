@@ -1,4 +1,4 @@
-<h1>Which Drink?</h1>
+<h1>How much charge?</h1>
 %id = id
 {{id}}
 <form action="" method="POST">
