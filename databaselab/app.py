@@ -42,14 +42,15 @@ def add_item():
 @route("/update", method=["GET","POST"])
 def update_item():
     if request.method =="POST":
-        new_id = request.POST.getunicode("item_id")
-        new_money = request.POST.getunicode("item_money")
+        new_id = request.POST.getunicode("id")
+        # print(new_id)
+        # print(type(new_id))
+        new_money = request.POST.getunicode("money")
+        # print(new_money)
+        # print(type(new_money))
         conn = sqlite3.connect("members.db")
         c = conn.cursor()
-        #para = [new_money, int(new_id)]
-        print(new_id, new_money)
-        print(type(new_money))
-        c.execute("update members set money=money+? where id= ?",(new_money,int(new_id),))
+        c.execute("update members set money=money+? where id= ?",(int(new_money),int(new_id),))
         conn.commit()
         conn.close()
         return redirect("/list")
@@ -69,7 +70,7 @@ def chaege_calc(charger_id):
 def drink_calc(drink_id):
     if request.method =="POST":
         update_id = request.POST.getunicode("id")
- 
+        print(update_id)
         return redirect("/list")
     else:
         return template("drink", id = drink_id)
