@@ -8,9 +8,9 @@
 
 <h1 align="center" class="cp_h1title">Deposit manager</h1>
 
-<body bgcolor="gray">
+<body bgcolor="gray" background="/files/bg.jpg">
 <!-- <a href="/add" > new </a>  -->
-  <table border="1" align="center" style="table-layout: auto" width="85%">
+  <table border="1" align="center" style="table-layout: auto; font-size: 15pt;" width="85%" bgcolor ="oldlace" >
     %for i,m in enumerate(item_list):
       %if i==0:
       <tr>
