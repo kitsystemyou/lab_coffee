@@ -1,7 +1,6 @@
 <head>
   <title>Tokunaga Lab Coffee</title>
   <style>
-
   </style>
   <link rel="stylesheet" href="/files/h1.css">
   <!-- <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'> -->
@@ -9,9 +8,9 @@
 
 <h1 align="center" class="cp_h1title">Deposit manager</h1>
 
-<body>
+<body bgcolor="gray">
 <!-- <a href="/add" > new </a>  -->
-  <table border="1" align="center" style="table-layout: fixed" width="60%">
+  <table border="1" align="center" style="table-layout: auto" width="85%">
     %for i,m in enumerate(item_list):
       %if i==0:
       <tr>
@@ -32,7 +31,6 @@
         <td>{{m["money"]}}</td>
         <td>{{m["lucky"]}}</td>
         
-
         <!-- <td><a href="/del/{{m["id"]}}">delete</a></td>  delete member -->
       </tr>
       %end
