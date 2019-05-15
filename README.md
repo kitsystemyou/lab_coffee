@@ -8,12 +8,12 @@ clone and execute this below command in environment of python3
 
 ```python app.py ```
 
-# Pages
+# setfiles
 in this rooting resion, you need to add "/files" to filepath
 ex) /bodydesing.css → /files/bodydesign.css
 ./ mean the directory that "app.py" exist.
 
-#Rooting
+# Rooting
 ## /list 
 userpage
 
