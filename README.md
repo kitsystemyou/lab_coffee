@@ -27,6 +27,9 @@ charge page
 update user data.
 this need "id" and "money" with[POST]
 
+## /add
+add new member to database
+
 ## /member_page
 manage page
 
