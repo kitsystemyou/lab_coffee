@@ -8,6 +8,9 @@ clone and execute this below command in environment of python3
 
 ```python app.py ```
 
+access "localhost:8000" by your browser
+
+
 # setfiles
 in this rooting resion, you need to add "/files" to filepath
 ex) /bodydesing.css → /files/bodydesign.css
