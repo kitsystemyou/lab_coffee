@@ -8,7 +8,7 @@ clone and execute this below command in environment of python3
 
 ```python app.py ```
 
-access "localhost:8000" by your browser
+access "localhost:8000/list" by your browser
 
 
 # setfiles
